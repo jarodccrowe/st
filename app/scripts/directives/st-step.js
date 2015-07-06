@@ -7,16 +7,34 @@
  * # stStep
  */
 angular.module('stacklaApp')
-  .directive('stStep', function () {
+  .directive('stStep', [function () {
     return {
       scope: {
-        step: '='
+        step: '=',
+        activeStep: '=',
+        totalSteps: '='
       },
       templateUrl: '/scripts/directives/templates/st-step.html',
       restrict: 'A',
-      link: function(scope) {
-        console.log('st-step');
-        console.log(scope.step);
+      link: function() {
+
+      },
+      controller: function($scope) {
+
+        var stvm = $scope;
+
+        stvm.nextStep = function () {
+          if(stvm.activeStep < stvm.totalSteps){
+            stvm.activeStep = $scope.activeStep + 1;
+          }
+        };
+
+        stvm.prevStep = function () {
+          if(stvm.activeStep > 1){
+            stvm.activeStep = $scope.activeStep - 1;
+          }
+        };
+
       }
     };
-  });
+  }]);

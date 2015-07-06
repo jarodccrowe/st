@@ -8,7 +8,7 @@
  * Controller of the stacklaApp
  */
 angular.module('stacklaApp')
-  .controller('MainCtrl', function () {
+  .controller('MainCtrl', ['Steps', function (Steps) {
 
     /* jshint validthis: true */
     var mvm = this;
@@ -19,16 +19,8 @@ angular.module('stacklaApp')
       'Karma'
     ];
 
-    mvm.steps = {
-        step1: {
-          title: 'Upload Image'
-        },
-        step2: {
-          title: 'Your Information'
-        },
-        step3: {
-          title: 'Last Step'
-        }
-    };
+    mvm.steps = Steps.steps;
+    mvm.activeStep = Steps.activeStep;
+    mvm.totalSteps = Steps.totalSteps;
 
-  });
+  }]);
