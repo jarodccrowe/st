@@ -1,9 +1,22 @@
-<div ng-if="activeStep === step.id">
-  <h2>{{step.title}}</h2>
-  <div class="row">...</div>
-  <div class="row" ng-if="step.additionalText">{{step.additionalText}}</div>
+<div class="container-fluid" ng-if="activeStep === step.id">
   <div class="row">
-    <button class="btn-prev" ng-click="prevStep()">Prev</button>
-    <button class="btn-next" ng-click="nextStep()">Next</button>
+    <div class="col-xs-12 step__information">
+      <h4 class="pull-left">Step {{step.id}}</h4>
+      <p class="pull-right step__information__progress"><i>25%</i></p>
+    </div>
   </div>
-<div>
+  <div class="row-fluid">
+    <div class="col-xs-12 step__content">
+      <h3>{{step.title}}</h3>
+      <div>{{step.additionalText}}</div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-6 step__navigation">
+        <button class="btn btn-default btn-block" ng-click="prevStep()">< Prev</button>
+      </div>
+      <div class="col-xs-6 step__navigation">
+        <button class="btn btn-default btn-block" ng-click="nextStep()">Next ></button>
+      </div>
+  </div>
+</div>

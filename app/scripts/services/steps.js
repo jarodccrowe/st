@@ -19,10 +19,12 @@ angular.module('stacklaApp')
         step1: {
           id: 1,
           title: 'Upload Image',
+          additionalText: '...'
         },
         step2: {
           id: 2,
           title: 'Your Information',
+          additionalText: '...'
         },
         step3: {
           id: 3,

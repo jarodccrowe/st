@@ -1,0 +1,23 @@
+.steps {
+  width: 33.3rem;
+  background-color: #fff;
+  margin: 0 auto 3rem auto;
+  border: 1px solid #d3d3d3;
+}
+
+.step__content {
+  background-color: #d3d3d3;
+  height: 23.2rem;
+}
+
+.step__information {
+  margin-top: 1rem;
+}
+
+.step__information__progress {
+  margin-top: 1rem;
+}
+
+.step__navigation {
+  margin: 2rem 0 2.5rem 0;
+}

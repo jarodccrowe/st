@@ -25,13 +25,13 @@ angular.module('stacklaApp')
 
         stvm.nextStep = function () {
           if(stvm.activeStep < stvm.totalSteps){
-            stvm.activeStep = $scope.activeStep + 1;
+            stvm.activeStep = stvm.activeStep + 1;
           }
         };
 
         stvm.prevStep = function () {
           if(stvm.activeStep > 1){
-            stvm.activeStep = $scope.activeStep - 1;
+            stvm.activeStep = stvm.activeStep - 1;
           }
         };
 

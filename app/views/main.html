@@ -1,10 +1,15 @@
-<div class="jumbotron" ng-controller="MainCtrl as mvm">
-  <form class="steps">
-    <section st-step
-      data-active-step="mvm.activeStep"
-      data-total-steps="mvm.totalSteps"
-      data-step="step"
-      ng-repeat="step in mvm.steps">
-    </section>
-  </form>
+<div class="container-fluid" ng-controller="MainCtrl as mvm">
+  <div class="row">
+    <div class="col-xs-12">
+      <form class="steps">
+        <section st-step
+          class="step"
+          data-active-step="mvm.activeStep"
+          data-total-steps="mvm.totalSteps"
+          data-step="step"
+          ng-repeat="step in mvm.steps">
+        </section>
+      </form>
+    </div>
+  </div>
 </div>
