@@ -12,7 +12,8 @@ angular.module('stacklaApp')
       scope: {
         step: '=',
         activeStep: '=',
-        totalSteps: '='
+        totalSteps: '=',
+        stepProgress: '='
       },
       templateUrl: '/scripts/directives/templates/st-step.html',
       restrict: 'A',
@@ -20,21 +21,31 @@ angular.module('stacklaApp')
 
       },
       controller: function($scope) {
-
         var stvm = $scope;
+
+        stvm.init = function() {
+          stvm.checkProgress();
+        };
 
         stvm.nextStep = function () {
           if(stvm.activeStep < stvm.totalSteps){
             stvm.activeStep = stvm.activeStep + 1;
+            stvm.checkProgress();
           }
         };
 
         stvm.prevStep = function () {
-          if(stvm.activeStep > 1){
+          if(stvm.activeStep > 0){
             stvm.activeStep = stvm.activeStep - 1;
+            stvm.checkProgress();
           }
         };
 
+        stvm.checkProgress = function() {
+          stvm.stepProgress = Math.floor(stvm.step.id / stvm.totalSteps * 100);
+        };
+
+        stvm.init();
       }
     };
   }]);
