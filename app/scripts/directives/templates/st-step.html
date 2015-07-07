@@ -1,8 +1,17 @@
-<div class="container-fluid" ng-if="activeStep === step.id">
+<div class="container-fluid" ng-show="activeStep === step.id">
   <div class="row">
     <div class="col-xs-12 step__information">
       <h4 class="pull-left">Step {{step.id + 1}}</h4>
       <p class="pull-right step__information__progress"><i>Progress: {{stepProgress}}%</i></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+        <ul class="pagination pagination-sm  step__pagination">
+          <li><a ng-click="changeActiveStep(0)">Step 1</a></li>
+          <li><a ng-click="changeActiveStep(1)">Step 2</a></li>
+          <li><a ng-click="changeActiveStep(2)">Step 3</a></li>
+        </ul>
     </div>
   </div>
   <div class="row-fluid">

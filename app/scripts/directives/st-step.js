@@ -45,6 +45,11 @@ angular.module('stacklaApp')
           stvm.stepProgress = Math.floor(stvm.step.id / stvm.totalSteps * 100);
         };
 
+        stvm.changeActiveStep = function(newStepId) {
+          stvm.activeStep = newStepId;
+          console.log(stvm.activeStep);
+        };
+
         stvm.init();
       }
     };

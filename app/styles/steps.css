@@ -21,3 +21,7 @@
 .step__navigation {
   margin: 2rem 0 2.5rem 0;
 }
+
+.step__pagination {
+    cursor: pointer;
+}
