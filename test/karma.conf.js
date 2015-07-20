@@ -28,7 +28,6 @@ module.exports = function(config) {
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-mocks/angular-mocks.js',
-      'bower_components/ng-lodash/build/ng-lodash.js',
       // endbower
       "app/scripts/**/*.js",
       "test/mock/**/*.js",

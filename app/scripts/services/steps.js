@@ -12,7 +12,6 @@ angular.module('stacklaApp')
     // AngularJS will instantiate a singleton by calling "new" on this function
 
     this.activeStep = 0;
-    this.totalSteps = 2;
 
     this.steps = {
         step1: {
@@ -30,6 +29,22 @@ angular.module('stacklaApp')
           title: 'Last Step',
           additionalText: 'Are you sure you want to submit the form?',
         }
+    };
+
+    this.countSteps = function() {
+      this.totalSteps = Object.keys(this.steps).length;
+      console.log('there are now ' + this.totalSteps + ' steps');
+    };
+
+    this.countSteps();
+
+    this.addStep = function (name, id, title, additionalText) {
+      this.steps[name] = {
+        id: id,
+        title: title,
+        additionalText: additionalText
+      };
+      this.countSteps();
     };
 
   });

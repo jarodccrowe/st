@@ -7,7 +7,7 @@
  * # stStep
  */
 angular.module('stacklaApp')
-  .directive('stStep', [function () {
+  .directive('stStep', [ function () {
     return {
       scope: {
         step: '=',
